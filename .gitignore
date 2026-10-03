@@ -1,0 +1,16 @@
+# IDE and Environment background files (Add this line)
+.vs/
+
+# Target compilation directories
+target/
+*.class
+
+# Volatile H2 Local File Database Data
+data/
+*.db
+
+# IDE settings
+.idea/
+.vscode/
+*.iml
+.DS_Store
