@@ -12,7 +12,7 @@ Your professional self-assessment covers your academic evolution from clinical h
 ---
 
 ## 📹 Foundational Code Review
-*   **Video Link Walkthrough:** [Access My Capstone Code Review Video Walkthrough Here][CS 499 Capstone Code Review Walkthrough on YouTube](https://youtu.be/DL3qjcoR37I) *(Replace with your actual video submission URL)*
+*   **Video Link Walkthrough:** [Access My Capstone Code Review Video Walkthrough Here][CS 499 Capstone Code Review Walkthrough on YouTube](https://youtu.be/DL3qjcoR37I)
 
 ---
 
