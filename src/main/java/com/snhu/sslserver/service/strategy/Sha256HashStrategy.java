@@ -4,8 +4,8 @@ import java.io.InputStream;
 import java.security.MessageDigest;
 
 /**
- * Concrete strategy implementing SHA-256 cryptographic message digests.
- * Streams data sequentially to maintain a near-zero memory footprint during execution.
+ * CONCRETE STRATEGY: Implements memory-optimized SHA-256 message digests.
+ * Streams data sequentially via a 1KB block buffer to maintain a near-zero memory footprint.
  */
 public class Sha256HashStrategy implements HashStrategy {
 
@@ -19,19 +19,19 @@ public class Sha256HashStrategy implements HashStrategy {
     @Override
     public String generateChecksum(InputStream dataStream) throws Exception {
         if (dataStream == null) {
-            throw new IllegalArgumentException("Input data stream cannot be null.");
+            throw new IllegalArgumentException("Inbound data stream cannot be null.");
         }
 
         MessageDigest digest = MessageDigest.getInstance(ALGORITHM);
-        byte[] buffer = new byte[1024]; // 1KB sequential streaming buffer block
+        byte[] buffer = new byte[1024]; // 1KB optimized chunk size
         int bytesRead;
 
-        // Process data streams chunk-by-chunk to maximize memory overhead efficiency
+        // Process data chunk-by-chunk to maximize resource memory efficiency
         while ((bytesRead = dataStream.read(buffer)) != -1) {
             digest.update(buffer, 0, bytesRead);
         }
 
-        // Convert the raw binary digest bytes into a readable Hexadecimal format
+        // Convert the raw bytes into a secure hex string via bitwise lookups
         byte[] hashBytes = digest.digest();
         StringBuilder hexString = new StringBuilder();
         for (byte b : hashBytes) {
@@ -41,7 +41,6 @@ public class Sha256HashStrategy implements HashStrategy {
             }
             hexString.append(hex);
         }
-
         return hexString.toString();
     }
 }

@@ -1,4 +1,3 @@
-// File: src/main/java/com/snhu/sslserver/entity/AuditLog.java
 package com.snhu.sslserver.entity;
 
 import jakarta.persistence.Entity;
@@ -9,8 +8,8 @@ import jakarta.persistence.Table;
 import java.time.LocalDateTime;
 
 /**
- * DATABASE LAYER: Object-Relational Mapping Entity.
- * Maps cryptographic telemetry metrics directly onto physical file-backed disk tables.
+ * DATABASE TIER: Relational ORM Persistent Mapping Entity.
+ * Instructs Hibernate to record telemetry indices straight to disk tables.
  */
 @Entity
 @Table(name = "audit_log")
@@ -54,3 +53,4 @@ public class AuditLog {
     public LocalDateTime getTimestamp() { return timestamp; }
     public void setTimestamp(LocalDateTime timestamp) { this.timestamp = timestamp; }
 }
+
